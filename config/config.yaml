@@ -1,0 +1,61 @@
+# ============================================================
+# AI-Powered Predictive Maintenance System - Configuration
+# ============================================================
+
+# --- Sensor Thresholds ---
+thresholds:
+  temperature:
+    normal_max: 75       # °C
+    warning_max: 90      # °C
+    critical_max: 105    # °C
+
+  vibration:
+    normal_max: 3.0      # mm/s
+    warning_max: 5.5     # mm/s
+    critical_max: 8.0    # mm/s
+
+  current:
+    normal_max: 15.0     # Amperes
+    warning_max: 20.0    # Amperes
+    critical_max: 25.0   # Amperes
+
+  pressure:
+    normal_max: 80       # PSI
+    warning_max: 100     # PSI
+    critical_max: 120    # PSI
+
+  runtime_hours:
+    maintenance_due: 1000  # hours between scheduled maintenance
+
+# --- Alert Levels ---
+alert_levels:
+  NORMAL: 0
+  WARNING: 1
+  CRITICAL: 2
+
+# --- Data Simulation Settings ---
+simulation:
+  n_samples: 5000          # Total data points to simulate
+  failure_rate: 0.15       # 15% failure events (class imbalance)
+  random_seed: 42
+  time_step_minutes: 10    # Each sample represents 10 minutes
+
+# --- Model Settings ---
+model:
+  test_size: 0.2
+  random_state: 42
+  cv_folds: 5
+  selected_model: "random_forest"   # Options: logistic_regression, random_forest, xgboost
+
+# --- Paths ---
+paths:
+  raw_data: "data/raw/sensor_data.csv"
+  processed_data: "data/processed/processed_data.csv"
+  model_output: "models/best_model.pkl"
+  scaler_output: "models/scaler.pkl"
+  log_file: "logs/pipeline.log"
+
+# --- Dashboard ---
+dashboard:
+  refresh_interval: 2     # seconds
+  history_window: 100     # last N samples to show on live chart

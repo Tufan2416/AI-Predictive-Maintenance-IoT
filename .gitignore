@@ -1,0 +1,47 @@
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual Environments ─────────────────────────────────────
+venv/
+env/
+.venv/
+ENV/
+
+# ── Jupyter ──────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── IDE ──────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Models (large binary files) ──────────────────────────────
+# Uncomment if you want to exclude trained models from git
+# models/*.pkl
+
+# ── Logs ─────────────────────────────────────────────────────
+logs/*.log
+
+# ── Data (large files) ───────────────────────────────────────
+# Keep sample data in repo, exclude very large files
+# data/raw/*.csv
+
+# ── Outputs ──────────────────────────────────────────────────
+# Keep screenshots in repo — exclude large prediction CSVs
+outputs/predictions.csv
+outputs/reports/alert_log.csv
+
+# ── Streamlit ────────────────────────────────────────────────
+.streamlit/secrets.toml
